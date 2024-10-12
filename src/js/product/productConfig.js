@@ -2,19 +2,21 @@ const $cardTextWrap = document.querySelectorAll('.card__wrap-text')
 const $productImg = document.querySelectorAll('.product__img')
 
 const images = [
-	'./images/product/product-1.JPG',
-	'./images/product/product-2.JPG',
-	'./images/product/product-3.JPG',
-	'./images/product/product-4.JPG',
-	'./images/product/product-5.JPG',
-	'./images/product/product-6.JPG',
-	'./images/product/product-7.JPG',
+	'./images/product/product-1.webp',
+	'./images/product/product-2.webp',
+	'./images/product/product-3.webp',
+	'./images/product/product-4.webp',
+	'./images/product/product-5.webp',
+	'./images/product/product-6.webp',
+	'./images/product/product-7.webp',
 ]
 
 $productImg.forEach((img, index) => {
 	if (images[index]) {
 		img.src = images[index]
 		img.alt = `Image ${index + 1}`
+		img.loading = 'lazy'
+		img.decoding = 'async'
 	}
 	if (index % 2 === 1) {
 		img.classList.add('order')
